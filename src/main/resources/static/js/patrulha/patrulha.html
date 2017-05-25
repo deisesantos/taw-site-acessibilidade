@@ -1,0 +1,41 @@
+<div class="row">
+	<div class="page-header">
+		<h2>Patrulhas</h2>
+	</div>
+</div>
+
+<div class="alert alert-danger" 
+	ng-show="controller.error">{{controller.errorMessage}}
+</div>
+
+<div class="row">
+	<table id="lista-de-patrulhas" class="table table-striped">
+		<thead>
+			<tr>
+				<th>id</th>
+				<th>Nome</th>
+				<th>Ações</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in itens">
+				<td>{{ item.id }}</td>
+				<td>{{ item.nome }}</td>
+				<td>
+					<form method="post">
+						<button class="btn btn-link" 
+							ng-click="delete(item, $index)">
+					 		<span class="glyphicon glyphicon-remove"></span>
+						</button>
+						<button class="btn btn-link" 
+							ng-click="edit(item)">
+					 		<span class="glyphicon glyphicon-edit"></span>
+						</button>
+					</form>
+				</td>
+			</tr>
+		</tbody>
+	</table>	
+</div>
+
+

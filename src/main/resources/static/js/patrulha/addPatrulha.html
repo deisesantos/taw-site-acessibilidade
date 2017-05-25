@@ -1,0 +1,38 @@
+<div class="row">
+	<div class="page-header">
+		<h2>Criar Patrulha</h2>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		<form method="post" name="formAddPatrulha" novalidate>
+			<div class="form-group ">
+				<label class="control-label requiredField" 
+				for="desc">
+					Nome 
+					<span class="asteriskField"> * </span>
+				</label> 
+				<input class="form-control" name="nomePatrulha" 
+				ng-model="nomePatrulha" type="text" required/>
+				<p ng-show="formAddPatrulha.nomePatrulha.$invalid && 
+				!formAddPatrulha.nomePatrulha.$pristine" class="help-block">
+				Este campo é obrigatorio.</p>
+				
+			</div>
+			<div class="form-group">
+				<div>
+					<button class="btn pull-right btn-primary" 
+					ng-disabled="formAddPatrulha.$invalid"
+					ng-click="add(formAddPatrulha.$valid)">
+					Salvar</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+<div class="alert alert-danger" 
+	ng-show="controller.error">{{controller.errorMessage}}
+</div>
